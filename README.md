@@ -22,17 +22,39 @@ npm run desktop
 
 `npm run dev` открывает только UI-предпросмотр для разработки: Rust-команды в обычном браузере недоступны. Отдельная веб-версия продукта не поставляется.
 
-## Сборка и проверки
+## Release-сборка
+
+На новом компьютере сначала установите зафиксированные npm-зависимости, затем запустите production-сборку:
 
 ```powershell
+npm ci
 npm run desktop:build
+```
+
+Готовый исполняемый файл:
+
+```text
+target\release\radar-trainer.exe
+```
+
+Его можно запустить напрямую:
+
+```powershell
+.\target\release\radar-trainer.exe
+```
+
+`scripts/desktop.ps1` автоматически подключает среду Visual Studio через `vswhere`, если она не настроена в текущем терминале. Команда использует `tauri build --no-bundle`, поэтому создаёт standalone `.exe` без MSI-установщика и цифровой подписи.
+
+## Автоматические проверки
+
+```powershell
+npm run test:frontend
 npm run test:rust
 npm run check
+npm run map:check
 npm run format:check
 npm run format:rust
 ```
-
-Исполняемый файл: `target/release/radar-trainer.exe`. Скрипт desktop автоматически подключает среду Visual Studio через `vswhere`, если она не подключена в терминале. Установщик MSI и подпись исполняемого файла в первую версию не входят.
 
 ## Пользовательский сценарий
 
@@ -81,8 +103,7 @@ src/api.ts                   Типизированная обёртка IPC
 src/types.ts                 Контракт TypeScript
 src/styles.css               Оформление и desktop-компоновка
 scripts/desktop.ps1          Настройка среды сборки Windows
-docs/                       План, архитектура, приёмка и проверки
-Скрины/                     Исходные визуальные референсы
+docs/                       Архитектура, справочник функций и инструкция проверяющему
 ```
 
 ## Локальные данные

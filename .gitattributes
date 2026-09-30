@@ -4,6 +4,10 @@
 *.tsx text eol=lf
 *.css text eol=lf
 *.md text eol=lf
+*.json text eol=lf
+*.mjs text eol=lf
+*.py text eol=lf
+*.ps1 text eol=lf
 *.png binary
 *.PNG binary
 *.mp4 binary
