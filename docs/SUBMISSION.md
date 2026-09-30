@@ -70,8 +70,6 @@ npm run format:rust
 npm run map:check
 ```
 
-Ручной приёмочный сценарий описан в [TESTING.md](TESTING.md), соответствие пунктам ТЗ — в [ACCEPTANCE_MATRIX.md](ACCEPTANCE_MATRIX.md).
-
 ## Подготовка чистой папки
 
 Из корня рабочего репозитория:
@@ -81,15 +79,3 @@ npm run submission:create
 ```
 
 Команда пересоздаёт `submission/RADAR` из текущего working tree. В комплект не попадают `.git`, зависимости, сборки, локальные БД, исходный PBF и внутренние референсные скриншоты. Папку `submission/RADAR` можно архивировать и передавать на проверку.
-
-## Документация
-
-- [README.md](../README.md) — установка, запуск и пользовательский сценарий.
-- [HOW_IT_WORKS.md](HOW_IT_WORKS.md) — как совместно работают npm, React, Tauri и Rust.
-- [ARCHITECTURE.md](ARCHITECTURE.md) — компоненты, протокол, модель времени и хранение.
-- [CODE_REFERENCE.md](CODE_REFERENCE.md) — функции и методы по файлам.
-- [SCALABILITY.md](SCALABILITY.md) — переход на PostgreSQL и внешнюю авторизацию.
-- [LOGGING.md](LOGGING.md) — формат, расположение и безопасность логов.
-- [MAP_DATA.md](MAP_DATA.md) — происхождение и воспроизводимая сборка карты.
-- [TESTING.md](TESTING.md) — автоматические и ручные проверки.
-- [ACCEPTANCE_MATRIX.md](ACCEPTANCE_MATRIX.md) — трассировка требований.
