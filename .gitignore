@@ -1,0 +1,24 @@
+node_modules/
+dist/
+target/
+src-tauri/target/
+src-tauri/gen/
+*.log
+.env
+.env.*
+!.env.example
+*.db
+*.db-shm
+*.db-wal
+.DS_Store
+Thumbs.db
+artifacts/
+*.osm.pbf
+__pycache__/
+*.tsbuildinfo
+submission/
+# Original 204 MB reference video stays local; avoid oversized remote Git objects.
+Скрины/*.mp4
+src-tauri/icons/android/
+src-tauri/icons/ios/
+src-tauri/icons/*.icns

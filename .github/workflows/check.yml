@@ -1,0 +1,26 @@
+name: Check desktop application
+on: [push, pull_request]
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - run: npm ci
+      - run: npm run map:check
+      - run: npm run format:check
+      - run: npm run format:rust
+      - run: npm run test:rust
+      - run: npm run test:frontend
+      - run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/desktop.ps1 -Mode check
+      - run: npm run desktop:build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: radar-trainer-windows
+          path: target/release/radar-trainer.exe

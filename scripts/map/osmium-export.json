@@ -1,0 +1,26 @@
+{
+  "attributes": {},
+  "linear_tags": ["highway", "railway", "waterway", "natural=coastline"],
+  "area_tags": [
+    "building",
+    "landuse",
+    "natural=water,wood,scrub,wetland,beach",
+    "water",
+    "waterway=riverbank",
+    "leisure=park,garden"
+  ],
+  "include_tags": [
+    "building",
+    "highway",
+    "railway",
+    "waterway",
+    "natural",
+    "landuse",
+    "water",
+    "leisure",
+    "tunnel",
+    "bridge",
+    "layer",
+    "area"
+  ]
+}

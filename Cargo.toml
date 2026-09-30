@@ -1,0 +1,4 @@
+[workspace]
+members = ["crates/radar-core", "src-tauri"]
+default-members = ["crates/radar-core"]
+resolver = "2"

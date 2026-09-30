@@ -1,0 +1,42 @@
+{
+  "name": "radar-trainer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "map:prepare": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/map/prepare-map.ps1",
+    "map:check": "node scripts/map/check-map.mjs",
+    "submission:create": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/create-submission.ps1",
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "check": "tsc -b",
+    "tauri": "tauri",
+    "desktop": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/desktop.ps1 -Mode dev",
+    "desktop:build": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/desktop.ps1 -Mode build",
+    "test:rust": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/desktop.ps1 -Mode test",
+    "test:frontend": "node --experimental-strip-types --test tests/*.test.mjs",
+    "format:rust": "cargo fmt --all -- --check",
+    "format": "prettier --write src docs README.md package.json vite.config.ts tsconfig.json",
+    "format:check": "prettier --check src docs README.md package.json vite.config.ts tsconfig.json"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.10.0",
+    "html-to-image": "^1.11.13",
+    "lucide-react": "^0.468.0",
+    "maplibre-gl": "^6.11.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@maplibre/geojson-vt": "6.1.1",
+    "@maplibre/vt-pbf": "4.3.2",
+    "@tauri-apps/cli": "^2.10.0",
+    "@types/geojson": "^7946.0.16",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.4.0",
+    "prettier": "^3.9.9",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.0"
+  }
+}
